@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task-2 nested list</title>
+</head>
+
+<style>
+    #first{
+        background-color: rgb(182, 250, 250);
+    }
+    #second{
+        background-color: rgb(254, 255, 230);
+    }
+</style>
+
+<body>
+
+</body>
+<script>
+    let obj = {
+        "P1": {
+            Name: "User 1",
+            Role: "Role 1",
+            Description: "Sample test",
+            children: [{
+                Name: "childUser 1",
+                Role: "childRole 1",
+                Description: "child Sample test",
+            }, {
+                Name: "childUser 2",
+                Role: "childRole 2",
+                Description: "child Sample test",
+                children: {
+                    Name: "sub-childUser 2",
+                    Role: "sub-childRole 2",
+                    Description: "sub-child Sample test",
+                }
+            }]
+        }
+    }
+    let obj1 = {
+        "P2": {
+            Name: "User 2",
+            Role: "Role 1",
+            Description: "Sample test",
+            children: [{
+                Name: "childUser 1",
+                Role: "childRole 1",
+                Description: "child Sample test",
+            }, {
+                Name: "childUser 2",
+                Role: "childRole 2",
+                Description: "child Sample test",
+                children: {
+                    Name: "sub-childUser 2",
+                    Role: "sub-childRole 2",
+                    Description: "sub-child Sample test",
+                }
+            }]
+        }
+    }
+    document.write("<div id= 'first'>"+'<li>' + "Name : " + obj.P1.Name + '</li>');
+    document.write('<li>' + "Role : " + obj.P1.Role + '</li>');
+    document.write('<li>' + "Description : " + obj.P1.Description + '</li>');
+    document.write('<li>' + "Children : ");
+    document.write('<ul>' + "<li>" + "Name : " + obj.P1.children[0].Name + "</li>");
+    document.write("<li>" + "Role : " + obj.P1.children[0].Role + "</li>");
+    document.write("<li>" + "Description : " + obj.P1.children[0].Description + "</li>"+"<br>");
+    document.write("<li>" + "Name : " + obj.P1.children[1].Name + "</li>");
+    document.write("<li>" + "Role : " + obj.P1.children[1].Role + "</li>");
+    document.write("<li>" + "Description : " + obj.P1.children[1].Description + "</li>");
+
+    document.write("<ul>"+ "<li>" + "Name : " + obj.P1.children[1].children.Name + "</li>");
+    document.write("<li>" + "Role : " + obj.P1.children[1].children.Role + "</li>");
+    document.write("<li>" + "Description : " + obj.P1.children[1].children.Role + "</li>"+'</ul>'+"</ul>"+"</div>");
+
+
+    document.write("<div id= 'second'>"+'<li>' + "Name : " + obj1.P2.Name + '</li>');
+    document.write('<li>' + "Role : " + obj1.P2.Role + '</li>');
+    document.write('<li>' + "Description : " + obj1.P2.Description + '</li>');
+    document.write('<li>' + "Children : ");
+    document.write('<ul>' + "<li>" + "Name : " + obj1.P2.children[0].Name + "</li>");
+    document.write("<li>" + "Role : " + obj1.P2.children[0].Role + "</li>");
+    document.write("<li>" + "Description : " + obj1.P2.children[0].Description + "</li>"+"<br>");
+    document.write("<li>" + "Name : " + obj1.P2.children[1].Name + "</li>");
+    document.write("<li>" + "Role : " + obj1.P2.children[1].Role + "</li>");
+    document.write("<li>" + "Description : " + obj1.P2.children[1].Description + "</li>");
+
+    document.write("<ul>"+ "<li>" + "Name : " + obj1.P2.children[1].children.Name + "</li>");
+    document.write("<li>" + "Role : " + obj1.P2.children[1].children.Role + "</li>");
+    document.write("<li>" + "Description : " + obj1.P2.children[1].children.Role + "</li>"+'</ul>'+"</ul>"+"</div>");
+
+    
+    
+
+</script>
+
+</html>

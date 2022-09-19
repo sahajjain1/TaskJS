@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task-2 </title>
+</head>
+
+<body>
+    <style>
+        .red {
+            background-color: rgb(255, 158, 158);
+        }
+
+        .green {
+            background-color: rgb(170, 247, 170);
+        }
+
+        .blue {
+            background-color: rgb(173, 173, 255);
+        }
+    </style>
+    <ul id="parent"></ul>
+</body>
+<script>
+    var colors = ['red', 'green', 'blue'];
+    let arr = [
+        {
+            "Name": "User 1",
+            "Role": "Role 1",
+            "Description": "Sample test",
+            "children": [{
+                "Name": "childUser 1",
+                "Role": "childRole 1",
+                "Description": "child Sample test",
+            }, {
+                "Name": "childUser 2",
+                "Role": "childRole 2",
+                "Description": "child Sample test",
+                "children": [{
+                    "Name": "sub-childUser 2",
+                    "Role": "sub-childRole 2",
+                    "Description": "sub-child Sample test",
+                }]
+            }]
+        },
+        {
+            "Name": "User 1",
+            "Role": "Role 1",
+            "Description": "Sample test",
+            "children": [{
+                "Name": "childUser 1",
+                "Role": "childRole 1",
+                "Description": "child Sample test",
+            }, {
+                "Name": "childUser 2",
+                "Role": "childRole 2",
+                "Description": "child Sample test",
+                "children": [{
+                    "Name": "sub-childUser 2",
+                    "Role": "sub-childRole 2",
+                    "Description": "sub-child Sample test",
+                }]
+            }]
+        }
+    ];
+    // for (var i = 0; i < obj.length; i++) {
+    //     // document.write('<div class="' + colors[(i % colors.length)] + '"></div>');
+    //     function nested(obj) {
+    //         console.log('recursion');
+    //         document.write('<div class="' + colors[(i % colors.length)] + '">');
+    //         document.write('<ul>');
+    //         for (i in obj) {
+    //             document.write('<li>' + "Name : " + obj[i].Name);
+    //             document.write('<li>' + "Role : " + obj[i].Role);
+    //             document.write('<li>' + "Description : " + obj[i].Description);
+    //             obj[i].children ? document.write('<li>' + "Children: ") : '';
+    //             if (Array.isArray(obj[i].children)) {
+    //                 nested(obj[i].children);
+    //             }
+    //         }
+    //         document.write("</ul>");
+    //         document.write("</div>");
+    //     }
+    //     nested(obj[i]);
+    // }
+
+    arr.forEach((value, i) => {
+
+        function nested(obj) {
+            console.log('recursion');
+            document.write('<div class="' + colors[(i % colors.length)] + '">');
+            document.write('<ul>');
+            for (i in obj) {
+                console.log(i);
+                document.write('<li>' + "Name : " + obj.Name);
+                document.write('<li>' + "Role : " + obj.Role);
+                document.write('<li>' + "Description : " + obj.Description);
+                obj.children ? document.write('<li>' + "Children: ") : '';
+                if (Array.isArray(obj.children)) {
+                    nested(obj.children);
+                }
+            }
+            document.write("</ul>");
+            document.write("</div>");
+        }
+
+        nested(value);
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="contanier">
+        <th>Name</th>
+        <th>age</th>
+        <th>Hobbies</th>
+    </table>
+    <script>
+        let object = [{
+            name: "Smith",
+            age: 22,
+            hobbies: ['cricket', 'swimming']
+        }, {
+            name: "Sahaj",
+            age: 21,
+            hobbies: ['Soccer', 'TT']
+
+        }, {
+            name: "xyz",
+            age: 21,
+            hobbies: ['cricket', 'basketball','Running']
+
+        }]
+
+        for (var i = 0; i < object.length; i++) {
+            document.getElementById("contanier").innerHTML += ("<tr><td>" + object[i].name + "</td><td>" + object[i].age + "</td><td>" + object[i].hobbies + "</td></tr>")
+        }
+    </script>
+</body>
+
+</html>

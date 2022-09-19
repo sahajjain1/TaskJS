@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>Create dyanamic 3 dropdown list in javascript</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script language="javascript" type="text/javascript">
+            function urlRedirectTo(obj)
+			{
+				alert('You reached last step and selected '+obj);
+				//if('wordpress_version1' == obj)
+					//window.location = 'https://wordpress.org/download/';
+				//if('wordpress_version2' == obj)
+					//window.location = 'https://wordpress.org/download/';
+			}
+			function dynamicdropdown(listindex)
+            {
+                document.getElementById("sub_subcategory").length = 0;
+                document.getElementById("sub_subcategory").options[0]=new Option("Please select framework version","");
+                document.getElementById("subcategory").length = 0;
+                switch (listindex)
+                {
+                    case "Php" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("subcategory").options[1]=new Option("Wordpress","Wordpress");
+                        document.getElementById("subcategory").options[2]=new Option("Magento","Magento");
+                        break;
+                    
+                    case "Java" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("subcategory").options[1]=new Option("Strauts","Strauts");
+                        document.getElementById("subcategory").options[2]=new Option("Hibernate","Hibernate");
+                        break;
+                    case "Javascript" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("subcategory").options[1]=new Option("Prototype","Prototype");
+                        document.getElementById("subcategory").options[2]=new Option("jQuery","jQuery");
+                        break;
+                    case "Dotnet" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("subcategory").options[1]=new Option("VbScript","VbScript");
+                        break;
+                    default:
+                        document.getElementById("subcategory").options[0]=new Option("Please select framework","");
+                        break;
+                }
+                return true;
+            }
+            
+            function dynamicdropdownone(listindex)
+            {
+                document.getElementById("sub_subcategory").length = 0;
+                switch (listindex)
+                {
+                    case "Wordpress" :
+                        document.getElementById("sub_subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("sub_subcategory").options[1]=new Option("Wordpress Version1","wordpress_version1");
+                        document.getElementById("sub_subcategory").options[2]=new Option("Wordpress Version2","wordpress_version2");
+                        break;
+                    
+                    case "Magento" :
+                        document.getElementById("sub_subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("sub_subcategory").options[1]=new Option("Magento Version1","magento_version1");
+                        document.getElementById("sub_subcategory").options[2]=new Option("Magento Version2","magento_version2");
+                        break;
+                    case "Strauts" :
+                        document.getElementById("sub_subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("sub_subcategory").options[1]=new Option("Strauts Version1","strauts_version1");
+                        document.getElementById("sub_subcategory").options[2]=new Option("Strauts Version2","strauts_version2");
+                        break;
+                    
+                    case "Hibernate" :
+                        document.getElementById("sub_subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("sub_subcategory").options[1]=new Option("Hibernate Version1","hibernate_version1");
+                        document.getElementById("sub_subcategory").options[2]=new Option("Hibernate Version2","hibernate_version2");
+                        break;
+                    case "Prototype" :
+                        document.getElementById("sub_subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("sub_subcategory").options[1]=new Option("Prototype Version1","prototype_version1");
+                        document.getElementById("sub_subcategory").options[2]=new Option("Prototype Version2","prototype_version2");
+                        break;
+                    
+                    case "jQuery" :
+                        document.getElementById("sub_subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("sub_subcategory").options[1]=new Option("jQuery Version1","jquery_version1");
+                        document.getElementById("sub_subcategory").options[2]=new Option("jQuery Version2","jquery_version2");
+                        break;
+                    case "VbScript" :
+                        document.getElementById("sub_subcategory").options[0]=new Option("Please select framework","");
+                        document.getElementById("sub_subcategory").options[1]=new Option("VbScript Version1","vbscript_version1");
+                        document.getElementById("sub_subcategory").options[2]=new Option("VbScript Version2","vbscript_version2");
+                        break;
+                    default:
+                        document.getElementById("sub_subcategory").options[0]=new Option("Please select framework version","");
+                        break;
+                }
+                return true;
+            }
+       </script>
+    </head>
+    <title>Dynamic Drop Down List</title>
+    <body>
+        <div class="category_div" id="category_div">Please specify language:
+            <select name="category" class="required-entry" id="category" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                <option value="">Select Language</option>
+                <option value="Php">Php</option>
+                <option value="Java">Java</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Dotnet">Dotnet</option>
+            </select>
+        </div>
+        <div class="sub_category_div" id="sub_category_div">Please select framework:
+            <script type="text/javascript" language="JavaScript">
+                document.write('<select name="subcategory" id="subcategory" onchange="javascript: dynamicdropdownone(this.options[this.selectedIndex].value);"><option value="">Please select framework</option></select>')
+            </script>
+            <noscript>
+                <select name="subcategory" id="subcategory" >
+                    <option value="">Please select framework vesrion</option>
+                </select>
+            </noscript>
+        </div>
+        <div class="sub_subcategory_div" id="sub_subcategory_div">Please select framework version:
+            <script type="text/javascript" language="JavaScript">
+                document.write('<select name="sub_subcategory" onchange="javascript: urlRedirectTo(this.options[this.selectedIndex].value);" id="sub_subcategory"><option value="">Please select framework version</option></select>')
+            </script>
+            <noscript>
+                <select name="sub_subcategory" id="sub_subcategory" >
+                    <option value="">Please select framework vesrion</option>
+                </select>
+            </noscript>
+        </div>
+    </body>
+</html>                            

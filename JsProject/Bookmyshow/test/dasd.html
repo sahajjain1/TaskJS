@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first{height: 300px;
+        background-color: aquamarine;}
+    </style>
+</head>
+
+<body><div id="first">
+    <table id="contanier">
+        <th>Name</th>
+        <th>role</th>
+        <th>Description</th>
+        <th> children</th>
+    </table>
+</div>
+    <script>
+          
+        var Obj1 = {
+            P1: {
+                Name: "User 1",
+                Role: "Role 1",
+                Description: "Sample test",
+                children:[
+                    {
+                        child1: {
+                            Name: "childUser 1",
+                            Role: "childRole 1",
+                            Description: "child Sample test",
+                        },
+                        child2: {
+                            Name: "childUser 2",
+                            Role: "childRole 2",
+                            Description: "child Sample test",
+                            children: {
+                                Name: "sub-childUser 2",
+                                Role: "sub-childRole 2",
+                                Description: "sub-child Sample test",
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+        var Obj2 = {
+            "P2": {
+                "Name": "User 1",
+                "Role": "Role 1",
+                "Description": "Sample test",
+                "children": [
+                    {
+                        "child1": {
+                            "Name": "childUser 1",
+                            "Role": "childRole 1",
+                            "Description": "child Sample test",
+                        },
+                        "child2": {
+                            "Name": "childUser 2",
+                            "Role": "childRole 2",
+                            "Description": "child Sample test",
+                            "children": {
+                                "Name": "sub-childUser 2",
+                                "Role": "sub-childRole 2",
+                                "Description": "sub-child Sample test",
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+        var a = Obj1.P1.children;
+        var b;
+            Object.values(a).forEach(prop => b=(prop))
+            const myJSON = JSON.stringify(b);
+
+        
+            document.getElementById("contanier").innerHTML += ("<tr><td>" + Obj1.P1.Name + "</td><td>" + Obj1.P1.Role + "</td><td>" + Obj1.P1.Description )
+       
+
+    </script>
+</body>
+
+</html>

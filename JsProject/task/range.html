@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    var arr = [
+    {
+        id: 1,
+        name: "Smith",
+    },
+    {
+        id: 2,
+        name: "John",
+    },
+    {
+        id: 3,
+        name: "Smith1",
+    },
+    {
+        id: 4,
+        name: "John1",
+    },
+    {
+        id: 5,
+        name: "Smith2",
+    },
+    {
+        id: 6,
+        name: "John2",
+    },
+    {
+        id: 7,
+        name: "Smith3",
+    },
+    {
+        id: 8,
+        name: "John3",
+    },
+];
+var n1 = 3, n2 = 7;
+        function test(n1, n2,arr) {
+            arr.filter(value => 
+            {value.id > n1 && value.id < n2;
+           
+            console.log(value.name);
+            }
+         );}
+        test(n1, n2,arr);
+
+    </script>
+</body>
+</html>

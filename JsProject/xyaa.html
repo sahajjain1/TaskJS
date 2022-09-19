@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task-2 nested list</title>
+    <style>
+        #First{background-color: aqua;}
+    </style>
+</head>
+
+<body>
+    <ul id="demo"></ul>
+</body>
+<script>
+    let obj = {
+
+        "P1": {
+            "Name": "User 1",
+            "Role": "Role 1",
+            "Description": "Sample test",
+            "children": [{
+                "Name": "childUser 1",
+                "Role": "childRole 1",
+                "Description": "child Sample test",
+            }, {
+                "Name": "childUser 2",
+                "Role": "childRole 2",
+                "Description": "child Sample test",
+                "children": {
+                    "Name": "sub-childUser 2",
+                    "Role": "sub-childRole 2",
+                    "Description": "sub-child Sample test",
+                }
+            }]
+        }
+    }
+    let div = document.getElementById('demo');
+    function nested(obj) {
+        document.write("<div id='First'>");
+        document.write("<ul>");
+        for (i in obj) {
+            document.write('<li>'+"Name : " + obj[i].Name + '</obj>');
+            document.write('<li>' +"Role : "+ obj[i].Role + '</obj>');
+            document.write('<li>' +"Description : " +obj[i].Description + '</obj>');
+            document.write('<li>'+"Children"+'<br>');
+                if (Array.isArray(obj[i].children)) {
+                nested(obj[i].children);
+                document.write("<ul>" + "<li>" +"Name : " + obj.P1.children[1].children.Name + "</li>");
+                document.write("<li>" + "Role : "+obj.P1.children[1].children.Role + "</li>");
+                document.write("<li>" + "Description : " +obj.P1.children[1].children.Description + "</li>");
+            }
+        }
+
+      
+    }
+    document.write("</div>");
+
+    nested(obj);
+
+</script>
+
+</html>
